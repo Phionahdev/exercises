@@ -1,0 +1,48 @@
+function printDiamond(n) {
+  if (n % 2 === 0) {
+    n++; // Ensure n is an odd number for a symmetric diamond
+  }
+
+  let diamond = '';
+
+  for (let i = 1; i <= n; i += 2) {
+    let spaces = (n - i) / 2;
+    let stars = i;
+
+    // Add leading spaces
+    for (let j = 0; j < spaces; j++) {
+      diamond += ' ';
+    }
+
+    // Add stars
+    for (let j = 0; j < stars; j++) {
+      diamond += '*';
+    }
+
+    // Move to the next line
+    diamond += '\n';
+  }
+
+  for (let i = n - 2; i >= 1; i -= 2) {
+    let spaces = (n - i) / 2;
+    let stars = i;
+
+    // Add leading spaces
+    for (let j = 0; j < spaces; j++) {
+      diamond += ' ';
+    }
+
+    // Add stars
+    for (let j = 0; j < stars; j++) {
+      diamond += '*';
+    }
+
+    // Move to the next line
+    diamond += '\n';
+  }
+
+  console.log(diamond);
+}
+
+// Call the function with the desired number of rows (height of the diamond)
+printDiamond(5); // Change the argument to adjust the size of the diamond
